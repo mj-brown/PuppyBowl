@@ -5,7 +5,7 @@ function NewPlayerForm({ onSubmit, onCancel }) {
     name: '',
     breed: '',
     status: '',
-    imageurl: ''
+    imageUrl: ''
   });
 
   const handleChange = (e) => {
@@ -24,18 +24,20 @@ function NewPlayerForm({ onSubmit, onCancel }) {
   const isSubmitDisabled = !newPlayer.name || !newPlayer.breed || !newPlayer.status;
 
   return (
-    <div>
-      <h2>New Player Form</h2>
-      <label>Name</label>
-      <input type="text" name="name" value={newPlayer.name} onChange={handleChange} />
-      <label>Breed</label>
-      <input type="text" name="breed" value={newPlayer.breed} onChange={handleChange} />
-      <label>Status</label>
-      <input type="text" name="status" value={newPlayer.status} onChange={handleChange} />
-      <label>Image</label>
-      <input type="text" name="image url" value={newPlayer.imageurl} onChange={handleChange} />
-      <button onClick={handleSubmit} disabled={isSubmitDisabled}>Submit</button>
-      <button onClick={onCancel}>Cancel</button>
+    <div className='newPlayerFormContainer'>
+      <form>
+        <h2>New Player Form</h2>
+        <label>Name</label>
+        <input type="text" name="name" value={newPlayer.name} onChange={handleChange} />
+        <label>Breed</label>
+        <input type="text" name="breed" value={newPlayer.breed} onChange={handleChange} />
+        <label>Status</label>
+        <input type="text" name="status" value={newPlayer.status} onChange={handleChange} />
+        <label>Image</label>
+        <input type="text" name="imageUrl" value={newPlayer.imageUrl} onChange={handleChange} />
+        <button onClick={handleSubmit} disabled={isSubmitDisabled}>Submit</button>
+        <button onClick={onCancel}>Cancel</button>
+      </form>
     </div>
   )
 }

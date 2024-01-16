@@ -60,22 +60,26 @@ function App() {
   };
 
   return (
-    <>
-      <h1>The Puppy Bowl</h1>
-      <p>
-        Welcome to the Puppy Bowl. <br/>
-        This is where users can build rosters of cute puppies, <br/>
-        that are ready for adoption, <br/>
-        to play in the Puppy Bowl.
-      </p>
-      <div>
+    <div className='appContainer'>
+      <header>
+        <h1>The Puppy Bowl</h1>
+        <p>
+          Welcome to the Puppy Bowl. <br/>
+          This is where users can build rosters of cute puppies, <br/>
+          that are ready for adoption, <br/>
+          to play in the Puppy Bowl.
+        </p>
+      </header>
+      <div className='searchBar'>
         <input type="text" placeholder="Search for a player..." value={searchText} onChange={handleSearchChange} />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <button onClick={handleAddNewPlayer}>Add New Player</button>
-      {showNewPlayerForm && <NewPlayerForm onSubmit={handleFormSubmit} onCancel={handleCancel} />}
-      <AllPlayers players={searchText ? filteredPlayers : players} />
-    </>
+      <div className='newPlayerButtonContainer'>
+        <button onClick={handleAddNewPlayer}>Add New Player</button>
+        {showNewPlayerForm && <NewPlayerForm onSubmit={handleFormSubmit} onCancel={handleCancel} />}
+      </div>
+      <AllPlayers players={searchText ? filteredPlayers : players} setPlayers={setPlayers} />
+    </div>
   );
 }
 

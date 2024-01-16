@@ -27,7 +27,7 @@ const SinglePlayer = ({ player, setPlayers }) => {
   }
 
   return (
-    <div>
+    <div className='cardFrontContainer'>
       <img src={player.imageUrl} alt={player.name} />
       <h2>{player.name}</h2>
       <button onClick={handleSeeDetails}>See Details</button>
