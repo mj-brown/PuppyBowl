@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable react/prop-types */
 function SinglePlayerBack({ player, onGoBack }) {
   return (
     <div className='cardBackContainer'>

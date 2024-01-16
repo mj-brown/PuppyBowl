@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import AllPlayers from "./pages/AllPlayers";
 import NewPlayerForm from "./components/NewPlayerForm";
 import fetchPlayers from './API/index';

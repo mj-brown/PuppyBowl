@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import SinglePlayer from "../components/SinglePlayer";
 
 function AllPlayers({ players, setPlayers }) {
