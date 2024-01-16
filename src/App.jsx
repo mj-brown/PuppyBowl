@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import AllPlayers from "./pages/AllPlayers";
 import NewPlayerForm from "./components/NewPlayerForm";
 import fetchPlayers from './API/index';
+import './App.css';
 
 function App() {
   const [showNewPlayerForm, setShowNewPlayerForm] = useState(false);
@@ -63,20 +64,20 @@ function App() {
     <div className='appContainer'>
       <header>
         <h1>The Puppy Bowl</h1>
-        <p>
+        <p className='welcomeText'>
           Welcome to the Puppy Bowl. <br/>
           This is where users can build rosters of cute puppies, <br/>
-          that are ready for adoption, <br/>
+          that are <span>ready for adoption</span>, <br/>
           to play in the Puppy Bowl.
         </p>
       </header>
       <div className='searchBar'>
-        <input type="text" placeholder="Search for a player..." value={searchText} onChange={handleSearchChange} />
-        <button onClick={handleSearch}>Search</button>
+        <input type="text" placeholder="Search for a player..." value={searchText} onChange={handleSearchChange} className='searchInput' />
+        <button onClick={handleSearch} className='searchButton'>Search</button>
       </div>
       <div className='newPlayerButtonContainer'>
-        <button onClick={handleAddNewPlayer}>Add New Player</button>
-        {showNewPlayerForm && <NewPlayerForm onSubmit={handleFormSubmit} onCancel={handleCancel} />}
+        <button onClick={handleAddNewPlayer} className='formButton'>Add New Player</button>
+        {showNewPlayerForm && <NewPlayerForm onSubmit={handleFormSubmit} onCancel={handleCancel}  className='formButton' />}
       </div>
       <AllPlayers players={searchText ? filteredPlayers : players} setPlayers={setPlayers} />
     </div>
