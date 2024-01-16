@@ -5,6 +5,7 @@ function NewPlayerForm({ onSubmit, onCancel }) {
     name: '',
     breed: '',
     status: '',
+    imageurl: ''
   });
 
   const handleChange = (e) => {
