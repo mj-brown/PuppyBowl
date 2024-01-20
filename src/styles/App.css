@@ -1,0 +1,54 @@
+.appContainer {
+  align-items: center;
+  background-color: #fffefe;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+}
+
+header {
+  align-items: center;
+  background-image: url("../assets/dominik-kuhn-kEHp1gUJNO8-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 500px;
+  justify-content: center;
+  width: 100vw;
+}
+
+h1 {
+  color: #f3e4e4;
+  font-family: "Lemon", serif;
+  font-size: 100px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcomeText {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5em;
+  line-height: 40px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+span {
+  font-family: "Lemon", serif;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.searchBar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+}

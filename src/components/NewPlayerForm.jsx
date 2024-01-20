@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState } from "react";
+import { Grid, TextField, Button } from "@mui/material";
 
 function NewPlayerForm({ onSubmit, onCancel }) {
   const [newPlayer, setNewPlayer] = useState({
-    name: '',
-    breed: '',
-    status: '',
-    imageUrl: ''
+    name: "",
+    breed: "",
+    status: "",
+    imageUrl: "",
   });
 
   const handleChange = (e) => {
@@ -22,25 +23,72 @@ function NewPlayerForm({ onSubmit, onCancel }) {
     onSubmit(newPlayer);
   };
 
-  const isSubmitDisabled = !newPlayer.name || !newPlayer.breed || !newPlayer.status;
+  const isSubmitDisabled =
+    !newPlayer.name || !newPlayer.breed || !newPlayer.status;
 
   return (
-    <div className='newPlayerFormContainer'>
+    <div className="newPlayerFormContainer">
       <form>
-        <h2>New Player Form</h2>
-        <label>Name</label>
-        <input type="text" name="name" value={newPlayer.name} onChange={handleChange} />
-        <label>Breed</label>
-        <input type="text" name="breed" value={newPlayer.breed} onChange={handleChange} />
-        <label>Status</label>
-        <input type="text" name="status" value={newPlayer.status} onChange={handleChange} />
-        <label>Image</label>
-        <input type="text" name="imageUrl" value={newPlayer.imageUrl} onChange={handleChange} />
-        <button onClick={handleSubmit} disabled={isSubmitDisabled}>Submit</button>
-        <button onClick={onCancel}>Cancel</button>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              fullWidth
+              name="name"
+              value={newPlayer.name}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Breed"
+              variant="outlined"
+              fullWidth
+              name="breed"
+              value={newPlayer.breed}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Status"
+              variant="outlined"
+              fullWidth
+              name="status"
+              value={newPlayer.status}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Image URL"
+              variant="outlined"
+              fullWidth
+              name="imageUrl"
+              value={newPlayer.imageUrl}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Button
+              onClick={handleSubmit}
+              variant="contained"
+              disabled={isSubmitDisabled}
+              fullWidth
+            >
+              Submit
+            </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Button onClick={onCancel} variant="contained" fullWidth>
+              Cancel
+            </Button>
+          </Grid>
+        </Grid>
       </form>
     </div>
-  )
+  );
 }
 
 export default NewPlayerForm;
